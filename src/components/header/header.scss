@@ -1,0 +1,60 @@
+body {
+  header {
+    .logo {
+      border-bottom: 1px solid #24272a;
+      padding: 37px 40px;
+
+      h1 {
+        a {
+          svg {
+            height: 72px;
+          }
+        }
+      }
+    }
+    nav {
+      border-bottom: 1px solid #24272a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 40px;
+
+      ul {
+        display: flex;
+        gap: 50px;
+
+        li {
+          a {
+            font-size: 20px;
+            color: #24272a;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+              color: #00a0df;
+            }
+          }
+          .active {
+            color: #00a0df;
+          }
+        }
+      }
+      .search {
+        padding: 37px 40px;
+        height: max-content;
+        background-color: #00a0df;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-left: 1px solid #24272a;
+        cursor: pointer;
+        outline: none;
+
+        svg{
+            width: 28px;
+            height: 28px;
+        }
+      }
+    }
+  }
+}
