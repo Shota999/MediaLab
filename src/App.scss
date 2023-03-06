@@ -21,6 +21,15 @@ body {
     .border {
       width: 100%;
       border: 1px solid #24272a;
+
+      .title{
+        padding: 45px 40px;
+        border-bottom: 1px solid #24272a;
+
+        h2{
+          text-transform: uppercase;
+        }
+      }
     }
   }
 }

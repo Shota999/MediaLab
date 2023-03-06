@@ -1,5 +1,6 @@
 import "./App.scss";
 import Header from "./components/header/Header";
+import News from "./components/news/News";
 import Partners from "./components/partners/Partners";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <Partners />
       <div className="border">
         <Header />
+        <News />
       </div>
     </div>
   );

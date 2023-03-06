@@ -1,0 +1,16 @@
+body {
+  .news {
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .news_container {
+      padding: 40px;
+
+      img{
+        width: 100%;
+      }
+    }
+  }
+}
