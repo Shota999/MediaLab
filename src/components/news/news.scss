@@ -4,12 +4,27 @@ body {
     grid-auto-rows: max-content;
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid #242424;
 
     .news_container {
       padding: 40px;
+      border-right: 1px solid #242424;
 
-      img{
-        width: 100%;
+      a {
+        transition: 0.1s ease-in-out;
+
+        img {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+        &:hover {
+          filter: grayscale(100%) brightness(70%) sepia(70%) hue-rotate(163deg)
+            saturate(600%) contrast(0.8);
+        }
+      }
+
+      &:last-child {
+        border: none;
       }
     }
   }

@@ -1,0 +1,28 @@
+body {
+  .subscribe_container {
+    display: flex;
+
+    .container {
+      
+      border-bottom: 1px solid #24272a;
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+        font-size: 60px;
+        padding: 45px 40px;
+      }
+      .join{
+        form{
+            label{
+                font-size: 20px;
+
+                input{
+                    padding: 0 40px;
+                }
+            }
+        }
+      }
+    }
+  }
+}

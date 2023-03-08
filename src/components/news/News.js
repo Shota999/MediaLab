@@ -14,6 +14,7 @@ const News = () => {
         setNews(res);
       });
   }, []);
+  
 
   return (
     <>

@@ -5,7 +5,9 @@ const New = ({ news }) => {
     <>
       {news.map((news) => (
         <div className="news_container" key={news.id}>
-          <img src={news.image} alt="news_image" />
+          <a href="#">
+            <img src={news.image} alt="news_image" />
+          </a>
           <span>{news.createDate}</span>
         </div>
       ))}
