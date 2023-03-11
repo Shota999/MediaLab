@@ -14,7 +14,6 @@ body {
   justify-content: center;
 
   .main_container {
-    width: 1530px;
     margin: 0 auto;
     padding: 50px 0 115px 0;
 
@@ -22,12 +21,20 @@ body {
       width: 100%;
       border: 1px solid #24272a;
 
-      .title{
+      .title {
         padding: 45px 40px;
         border-bottom: 1px solid #24272a;
 
-        h2{
+        h2 {
           text-transform: uppercase;
+        }
+      }
+      .container {
+        .title {
+          h2 {
+            color: #00a0df;
+            font-size: 60px;
+          }
         }
       }
     }

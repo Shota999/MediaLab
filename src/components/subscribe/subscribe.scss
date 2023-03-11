@@ -2,25 +2,79 @@ body {
   .subscribe_container {
     display: flex;
 
-    .container {
-      
-      border-bottom: 1px solid #24272a;
-      display: flex;
-      flex-direction: column;
+    .subscribe {
+      display: grid;
+      border-right: 1px solid #24272a;
+      border-bottom: none;
+      grid-template-rows: 2fr 1fr;
+      flex: 1;
 
       h2 {
         font-size: 60px;
-        padding: 45px 40px;
+        padding: 0 40px;
+        display: flex;
+        align-items: center;
       }
-      .join{
-        form{
-            label{
-                font-size: 20px;
+      .join {
+        display: flex;
+        padding: 0 40px;
+        border-top: 1px solid #24272a;
+        border-bottom: none;
+        align-items: center;
 
-                input{
-                    padding: 0 40px;
-                }
+        form {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+
+          label {
+            font-size: 20px;
+            color: #24272a;
+
+            input {
+              padding: 0 40px;
+              border: none;
+              background-color: transparent;
+              outline: none;
+              font-style: italic;
+              font-size: 20px;
+
+              &::placeholder {
+                color: #a2a2a2;
+              }
             }
+          }
+          button {
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: #00a0df;
+            font-style: italic;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    .social {
+      background-color: #00a0df;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+
+      ul {
+        display: flex;
+        gap: 100px;
+
+        li {
+          a {
+            svg {
+              width: 40px;
+              height: 40px;
+            }
+          }
         }
       }
     }

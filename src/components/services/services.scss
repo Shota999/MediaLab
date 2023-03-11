@@ -3,13 +3,16 @@ body {
     display: grid;
     grid-auto-rows: max-content;
     grid-auto-flow: column;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 45% 55%;
     border-bottom: 1px solid #242424;
 
     .img {
       padding: 40px;
       transition: 0.1s ease-in-out;
 
+      img{
+        width: 100%;
+      }
       &:hover {
         filter: grayscale(100%) brightness(70%) sepia(70%) hue-rotate(163deg)
           saturate(600%) contrast(0.8);

@@ -44,16 +44,45 @@ body {
         }
       }
       .search {
-        padding: 45px 46px;
-        height: max-content;
-        background-color: #00a0df;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        border-left: 1px solid #24272a;
-        cursor: pointer;
-        outline: none;
+
+        form {
+          border-left: 1px solid #24272a;
+          opacity: 0;
+          visibility: hidden;
+
+          input {
+            height: 100%;
+            padding-left: 70px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            font-size: 20px;
+            font-style: italic;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translate3d(0, -100%, 0);
+          }
+        }
+        .active{
+          opacity: 1;
+          visibility: visible;
+
+          input{
+            transform: none;
+          }
+        }
+        button {
+          padding: 45px 46px;
+          height: max-content;
+          background-color: #00a0df;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          border-left: 1px solid #24272a;
+          cursor: pointer;
+          outline: none;
+        }
 
         svg {
           width: 28px;
