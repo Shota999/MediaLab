@@ -1,17 +1,19 @@
+import { Link } from "react-router-dom";
+
 const Service = ({ services }) => {
   return (
     <>
       {services.map((services) => (
         <div className="services_container" key={services.id}>
-          <a href="#" className="img">
+          <Link to="#" className="img">
             <img src={services.image} alt="services_image" />
-          </a>
+          </Link>
           <div className="information">
-            <h3>{services.title}</h3>
+            <Link>{services.title}</Link>
             <p>{services.shortDescription}</p>
             <div className="more">
-              <a href={services.registrationUrl}>Register</a>
-              <a href={services.more}>See more</a>
+              <Link href={services.registrationUrl}>Register</Link>
+              <Link href={services.more}>See more</Link>
             </div>
           </div>
         </div>
