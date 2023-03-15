@@ -1,0 +1,105 @@
+body {
+  .contact_container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-bottom: 1px solid #24272a;
+
+    .left {
+      display: flex;
+      align-items: center;
+      padding: 0 60px;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        li {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          .title {
+            border: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+
+            svg {
+              width: 25px;
+              height: 30px;
+              fill: #9b9b9b;
+              margin-right: 40px;
+            }
+            span {
+              margin: 0;
+              font-size: 20px;
+              color: #24272a;
+              font-weight: bold;
+            }
+          }
+          span {
+            margin-left: 65px;
+            font-size: 20px;
+            color: #24272a;
+          }
+        }
+      }
+    }
+    .right {
+      height: 600px;
+    }
+  }
+  .write {
+    border-bottom: 1px solid #24272a;
+
+    .input {
+      border-bottom: 1px solid #24272a;
+      display: flex;
+
+      input {
+        outline: none;
+        border: none;
+        width: 100%;
+        padding: 40px 50px;
+        font-size: 25px;
+        background-color: transparent;
+
+        &::placeholder {
+          color: #a09e9d;
+        }
+      }
+    }
+    textarea {
+      border: none;
+      width: 100%;
+      height: 100%;
+      padding: 40px;
+      resize: none;
+      min-height: 300px;
+      overflow-y: auto;
+      outline: none;
+      font-size: 20px;
+      background-color: transparent;
+
+      &::placeholder {
+        color: #dcdad8;
+      }
+    }
+    .submit {
+      width: 100%;
+      text-align: right;
+      padding: 33px 0;
+      padding-right: 120px;
+
+      button {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        color: #00a0df;
+        font-style: italic;
+        font-size: 20px;
+      }
+    }
+  }
+}

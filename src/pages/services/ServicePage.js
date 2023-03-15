@@ -48,7 +48,7 @@ const ServicePage = () => {
                 Medialab offers an individual acceleration program for startups
                 working on products related to the communication industry...
               </p>
-              <div class="more">
+              <div className="more">
                 <Link to="https://docs.google.com/forms/d/e/1FAIpQLScJpAaNLRdDwekZJ8e7QgqJL3qNTbVWmG84oBNBpAldip1kyA/viewform?usp=sf_link">
                   Register
                 </Link>

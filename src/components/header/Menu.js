@@ -1,12 +1,12 @@
 import "./header.scss";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
-const Menu = ({ menu }) => {
+const Menu = ({ menu, scrollTop }) => {
   return (
     <ul>
       {menu.map((menu) => (
-        <li key={menu.id}>
-          <Link to="#">{menu.name}</Link>
+        <li key={menu.id} onClick={scrollTop}>
+          <NavLink to={menu.path}>{menu.title}</NavLink>
         </li>
       ))}
     </ul>

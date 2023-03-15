@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./partners.scss"
 
 const Partners = () => {
@@ -7,7 +8,7 @@ const Partners = () => {
         <div className="partners">
           <ul>
             <li>
-              <a href="#">
+              <Link to="/">
                 <svg
                   data-v-6c0f25cf=""
                   version="1.1"
@@ -61,10 +62,10 @@ const Partners = () => {
                     </g>
                   </g>
                 </svg>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">
+              <Link to="/">
                 <svg
                   data-v-6c0f25cf=""
                   version="1.1"
@@ -113,10 +114,10 @@ const Partners = () => {
                     </g>
                   </g>
                 </svg>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">
+              <Link to="/">
                 <svg
                   data-v-6c0f25cf=""
                   version="1.1"
@@ -170,12 +171,12 @@ const Partners = () => {
                     </g>
                   </g>
                 </svg>
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="partners_right">
             <li>
-              <a href="#">
+              <Link to="/">
                 <svg
                   data-v-6c0f25cf=""
                   version="1.1"
@@ -205,7 +206,7 @@ const Partners = () => {
                     ></path>
                   </g>
                 </svg>
-              </a>
+              </Link>
             </li>
           </div>
         </div>

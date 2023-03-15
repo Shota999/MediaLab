@@ -30,6 +30,8 @@ body {
           label {
             font-size: 20px;
             color: #24272a;
+            display: flex;
+            width: 100%;
 
             input {
               padding: 0 40px;
@@ -38,6 +40,7 @@ body {
               outline: none;
               font-style: italic;
               font-size: 20px;
+              flex: 1;
 
               &::placeholder {
                 color: #a2a2a2;

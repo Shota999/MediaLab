@@ -2,7 +2,7 @@ import "./about.scss";
 import "../../App.scss";
 import { useState, useEffect } from "react";
 
-const About = () => {
+const About = ( { path } ) => {
   const [about, setAbout] = useState(null);
 
   useEffect(() => {

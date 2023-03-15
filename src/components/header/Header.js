@@ -3,7 +3,7 @@ import Menu from "./Menu";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Header = ({ menu }) => {
+const Header = ({ menu, scrollTop }) => {
   const [search, setSearch] = useState(false);
 
   const handleClick = () => {
@@ -64,7 +64,7 @@ const Header = ({ menu }) => {
         </h1>
       </div>
       <nav>
-        {menu && <Menu menu={menu} />}
+        {menu && <Menu menu={menu} scrollTop={scrollTop} />}
         <div className="search">
           <form className={search ? 'active' : ''}>
             <input type="text" placeholder="Search" />
