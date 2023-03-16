@@ -14,7 +14,7 @@ const Header = ({ menu, scrollTop }) => {
     <header>
       <div className="logo">
         <h1>
-          <Link to="/home">
+          <Link to="/">
             <svg
               data-v-ebec2298=""
               version="1.1"

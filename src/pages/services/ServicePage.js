@@ -29,7 +29,7 @@ const ServicePage = () => {
           <img src={services[2]?.image} alt="servicesImage" />
         </Link>
         <div className="information">
-          <Link>Acceleration</Link>
+          <Link to={`/services/${services[2]?.slug}`}>Acceleration</Link>
           <p>{services[2]?.shortDescription}</p>
           <div className="more">
             <Link to="https://docs.google.com/forms/d/e/1FAIpQLScJpAaNLRdDwekZJ8e7QgqJL3qNTbVWmG84oBNBpAldip1kyA/viewform?usp=sf_link">
@@ -42,8 +42,8 @@ const ServicePage = () => {
 
       <div className="wrapper">
         <div className="wrapperItems">
-          {services.map((services) => (
-            <div className="wrapperItem">
+          {services.map((services ,i) => (
+            <div className="wrapperItem" key={services.id || i}>
               <Link to={`/services/${services?.slug}`}>
                 <img src={services.image} alt="" />
               </Link>

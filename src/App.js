@@ -33,10 +33,10 @@ function App() {
         <div className="border">
           <Header menu={menu} />
           <Routes>
-              <Route path="/home" element={<Home />}></Route>
+              <Route exact path="*" element={<Home />}></Route>
               <Route path="/about" element={<About />}></Route>
-              <Route path="/services/:id" element={<ServiceInnerPage />}></Route>
-              <Route exact path="/services" element={<ServicePage />}></Route>
+              <Route path="/services/:slug" element={<ServiceInnerPage />}></Route>
+              <Route path="/services" element={<ServicePage />}></Route>
               <Route path="/news" element={<NewsPage />}></Route>
               <Route path="/contact" element={<Contact />}></Route>
           </Routes>
