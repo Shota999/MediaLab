@@ -1,18 +1,17 @@
 import "./services.scss";
 import Service from "./Service";
 import { useState, useEffect } from "react";
+import { fetcher } from "../../utils/fetcher";
 
 const Services = () => {
   const [services, setServices] = useState(null);
 
   useEffect(() => {
-    fetch("https://medialab-api.leavingstone.club/api/Service/GetPinned")
-      .then((res) => {
-        return res.json();
-      })
-      .then((res) => {
-        setServices(res);
-      });
+    const handler = async () => {
+      const res = await fetcher("Service/GetPinned");
+      setServices(res);
+    };
+    handler();
   }, []);
   return (
     <>

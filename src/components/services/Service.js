@@ -6,7 +6,7 @@ const Service = ({ services }) => {
     <>
       {services.map((services) => (
         <div className="services_container" key={services.id}>
-          <Link to={`/services/${services.id}`} className="img">
+          <Link to={`/services/${services.slug}`} className="img">
             <img src={services.image} alt="services_image" />
           </Link>
           <div className="information">

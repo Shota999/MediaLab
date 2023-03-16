@@ -1,75 +1,87 @@
 .head {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 15px;
+
+  .container {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    padding-bottom: 15px;
+    flex: 1;
 
-    .container {
+    .partners {
+      width: 100%;
       display: flex;
       justify-content: space-between;
-      flex: 1;
+      padding-right: 40px;
+      margin-right: 40px;
+      position: relative;
 
-      .partners {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding-right: 40px;
-        margin-right: 40px;
-        position: relative;
-
-        ul {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 30px;
-
-          li {
-            a {
-              display: flex;
-
-              svg {
-                height: 28px;
-              }
-            }
-          }
-        }
-        .partners_right {
-          li {
-            a {
-              display: flex;
-
-              svg {
-                height: 40px;
-              }
-            }
-          }
-        }
-        &:after {
-          content: "";
-          position: absolute;
-          display: block;
-          top: 50%;
-          bottom: 0;
-          right: 0;
-          transform: translateY(-50%);
-          width: 1px;
-          height: 30px;
-          background-color: #24272a;
-        }
-      }
-      .language {
+      ul {
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        gap: 30px;
 
-        p{
-          font-weight: bold;
-          font-size: 18px;
-          text-transform: uppercase;
-          cursor: pointer;
+        li {
+          a {
+            display: flex;
+
+            .partners-media-links {
+              height: 30px;
+              overflow: hidden;
+              transition: 300ms;
+
+              .partners-media-links-container {
+                transition: 300ms;
+              }
+            }
+            .partners-media-links:hover > .partners-media-links-container {
+              transform: translateY(-30px);
+            }
+            svg {
+              height: 28px;
+            }
+          }
         }
-        span{
-          margin: 0 3px;
+      }
+      .partners_right {
+        li {
+          a {
+            display: flex;
+
+            svg {
+              height: 40px;
+            }
+          }
         }
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 50%;
+        bottom: 0;
+        right: 0;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 30px;
+        background-color: #24272a;
+      }
+    }
+    .language {
+      display: flex;
+      align-items: center;
+
+      p {
+        font-weight: bold;
+        font-size: 18px;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+      span {
+        margin: 0 3px;
       }
     }
   }
+}

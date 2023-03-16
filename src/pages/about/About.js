@@ -2,7 +2,7 @@ import "./about.scss";
 import "../../App.scss";
 import { useState, useEffect } from "react";
 
-const About = ( { path } ) => {
+const About = ({ path }) => {
   const [about, setAbout] = useState(null);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const About = ( { path } ) => {
         setAbout(res.data);
       });
   }, []);
-  
+
   return (
     <>
       <div className="container">
@@ -22,26 +22,26 @@ const About = ( { path } ) => {
           <h2>about us</h2>
         </div>
         {about && (
-          <div className="content">
-            <div className="left" key={about.id}>
-              <h3>{about.title}</h3>
-              <p>{about.description}</p>
+          <>
+            <div className="content">
+              <div className="left" key={about.id}>
+                <h3>{about.title}</h3>
+                <div className="description" dangerouslySetInnerHTML={{ __html: about.description }} />
+              </div>
+              <div className="right">
+                <img src={about.image} alt="missionImage" />
+              </div>
             </div>
-            <div className="right">
-              <img src={about.image} alt="missionImage" />
+            <div className="content">
+              <div className="right">
+                <img src={about.imageSecond} alt="missionImage" />
+              </div>
+              <div className="left" key={about.id}>
+                <h3>{about.titleSecond}</h3>
+                <div className="description" dangerouslySetInnerHTML={{ __html: about.descriptionSecond }} />
+              </div>
             </div>
-          </div>
-        )}
-        {about && (
-          <div className="content">
-            <div className="right">
-              <img src={about.imageSecond} alt="missionImage" />
-            </div>
-            <div className="left" key={about.id}>
-              <h3>{about.titleSecond}</h3>
-              <p>{about.descriptionSecond}</p>
-            </div>
-          </div>
+          </>
         )}
       </div>
     </>

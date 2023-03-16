@@ -6,7 +6,7 @@ const Menu = ({ menu, scrollTop }) => {
     <ul>
       {menu.map((menu) => (
         <li key={menu.id} onClick={scrollTop}>
-          <NavLink to={menu.path}>{menu.title}</NavLink>
+          <NavLink to={"/" + menu.slug}>{menu.name}</NavLink>
         </li>
       ))}
     </ul>

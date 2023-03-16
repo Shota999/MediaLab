@@ -2,9 +2,21 @@ import "./servicesPage.scss";
 import "../../App.scss";
 import "../about/about.scss";
 import "../../components/services/services.scss";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { fetcher } from "../../utils/fetcher";
 
 const ServicePage = () => {
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    const handler = async () => {
+      const res = await fetcher("Service");
+      setServices(res.data);
+    };
+    handler();
+  }, []);
+
   return (
     <>
       <div className="container">
@@ -13,70 +25,40 @@ const ServicePage = () => {
         </div>
       </div>
       <div className="services_container">
-        <Link className="img" to="/">
-          <img
-            src="https://static.medialab.ge/you-x-ventures-Oalh2MojUuk-unsplash-d58726ba.jpg"
-            alt="servicesImage"
-          />
+        <Link className="img" to={`/services/${services[2]?.slug}`}>
+          <img src={services[2]?.image} alt="servicesImage" />
         </Link>
         <div className="information">
           <Link>Acceleration</Link>
-          <p>
-            Medialab offers an individual acceleration program for startups
-            working on products related to the communication industry...
-          </p>
-          <div class="more">
+          <p>{services[2]?.shortDescription}</p>
+          <div className="more">
             <Link to="https://docs.google.com/forms/d/e/1FAIpQLScJpAaNLRdDwekZJ8e7QgqJL3qNTbVWmG84oBNBpAldip1kyA/viewform?usp=sf_link">
               Register
             </Link>
-            <Link>See more</Link>
+            <Link to={`/services/${services[2]?.slug}`}>See more</Link>
           </div>
         </div>
       </div>
+
       <div className="wrapper">
         <div className="wrapperItems">
-          <div className="wrapperItem">
-            <Link>
-              <img
-                src="https://static.medialab.ge/ideadromi-2021-3-9b4b19b9.jpg"
-                alt=""
-              />
-            </Link>
-            <div className="information">
-              <Link>Acceleration</Link>
-              <p>
-                Medialab offers an individual acceleration program for startups
-                working on products related to the communication industry...
-              </p>
-              <div className="more">
-                <Link to="https://docs.google.com/forms/d/e/1FAIpQLScJpAaNLRdDwekZJ8e7QgqJL3qNTbVWmG84oBNBpAldip1kyA/viewform?usp=sf_link">
-                  Register
-                </Link>
-                <Link>See more</Link>
+          {services.map((services) => (
+            <div className="wrapperItem">
+              <Link to={`/services/${services?.slug}`}>
+                <img src={services.image} alt="" />
+              </Link>
+              <div className="information">
+                <Link>{services.title}</Link>
+                <p>{services.shortDescription}</p>
+                <div className="more">
+                  <Link to="https://docs.google.com/forms/d/e/1FAIpQLScJpAaNLRdDwekZJ8e7QgqJL3qNTbVWmG84oBNBpAldip1kyA/viewform?usp=sf_link">
+                    Register
+                  </Link>
+                  <Link to={`/services/${services?.slug}`}>See more</Link>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="wrapperItem">
-            <Link>
-              <img
-                src="https://static.medialab.ge/ideadromi-2021-3-9b4b19b9.jpg"
-                alt=""
-              />
-            </Link>
-            <div className="information">
-              <Link>Acceleration</Link>
-              <p>
-                Medialab offers an individual acceleration program for startups
-                working on products related to the communication industry...
-              </p>
-              <div class="more">
-                <Link to="https://docs.google.com/forms/d/e/1FAIpQLScJpAaNLRdDwekZJ8e7QgqJL3qNTbVWmG84oBNBpAldip1kyA/viewform?usp=sf_link">
-                  Register
-                </Link>
-                <Link>See more</Link>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </>

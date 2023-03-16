@@ -9,12 +9,12 @@ const Header = ({ menu, scrollTop }) => {
   const handleClick = () => {
     setSearch(true);
   };
-  
+
   return (
     <header>
       <div className="logo">
         <h1>
-          <Link to="/">
+          <Link to="/home">
             <svg
               data-v-ebec2298=""
               version="1.1"
@@ -66,7 +66,7 @@ const Header = ({ menu, scrollTop }) => {
       <nav>
         {menu && <Menu menu={menu} scrollTop={scrollTop} />}
         <div className="search">
-          <form className={search ? 'active' : ''}>
+          <form className={search ? "active" : ""}>
             <input type="text" placeholder="Search" />
           </form>
           <button className="search" onClick={handleClick}>

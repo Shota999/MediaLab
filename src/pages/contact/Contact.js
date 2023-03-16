@@ -2,7 +2,6 @@ import "../../App.scss";
 import "./contact.scss";
 import { useState, useEffect } from "react";
 import Map from "../../components/map/Map";
-import Write from "./Write";
 
 const Contact = () => {
   const [contact, setContact] = useState(null);
@@ -14,10 +13,17 @@ const Contact = () => {
       })
       .then((res) => {
         setContact(res.data);
-        console.log(setContact);
+        console.log(res);
       });
   }, []);
 
+  if (!contact) {
+    return (
+      <>
+        <div className="loadging">loadging</div>
+      </>
+    );
+  }
   return (
     <>
       <div className="container">
@@ -45,8 +51,7 @@ const Contact = () => {
                 </svg>
                 <span>Address</span>
               </div>
-              {/* <span>{contact.phoneSecond}</span> */}
-              <span>Tbilisi, 0144, Ketevan Tsamebuli ave./Botchormi str. 50/18</span>
+              <span>{contact.address}</span>
             </li>
             <li>
               <div className="title">
@@ -65,7 +70,7 @@ const Contact = () => {
                 </svg>
                 <span>Phone</span>
               </div>
-              {/* <span>{contact.phoneSecond}</span> */}
+              <span>{contact.phone}</span>
             </li>
             <li>
               <div className="title">
@@ -89,14 +94,27 @@ const Contact = () => {
                 </svg>
                 <span>Email</span>
               </div>
-              {/* <span>{contact.phoneSecond}</span> */}
-              <span>info@medialab.ge</span>
+              <span>{contact.phoneSecond}</span>
             </li>
           </ul>
         </div>
         <div className="right">{/* <Map /> */}</div>
       </div>
-      <Write />
+      <div className="container">
+        <div className="title">
+          <h2>write to us</h2>
+        </div>
+      </div>
+      <form className="write">
+        <div className="input">
+          <input type="text" placeholder="Name" />
+          <input type="text" placeholder="Email" />
+        </div>
+        <textarea placeholder="Add your text here"></textarea>
+        <div className="submit">
+          <button>Send</button>
+        </div>
+      </form>
     </>
   );
 };

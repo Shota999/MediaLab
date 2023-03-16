@@ -14,9 +14,17 @@ const NewsPage = () => {
       })
       .then((res) => {
         setNewsList(res.data);
+        console.log(res);
       });
   }, []);
 
+  if (!newsList) {
+    return (
+      <>
+        <div className="loadging">loadging</div>
+      </>
+    );
+  }
   return (
     <>
       <div className="container">
@@ -26,7 +34,7 @@ const NewsPage = () => {
       </div>
       <div className="news_list">
         <div className="news_container">
-          <img src={newsList.image} alt="newsList_image" />
+          <img src={newsList[0].image} alt="newsList_image" />
           <span>{newsList.createDate}</span>
         </div>
       </div>
